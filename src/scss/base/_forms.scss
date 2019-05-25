@@ -45,8 +45,7 @@ textarea {
   border-radius: 0;
   &:focus {
     background-color: $base-input-background-focus-color;
-    border-color: $base-input-border-focus-color;
-    outline: 0;
+    outline: 1px solid $base-input-border-focus-color;
   }
 }
 [type="number"]::-webkit-inner-spin-button,
@@ -83,8 +82,7 @@ textarea {
   overflow: auto;
   &:focus {
     background-color: $base-input-background-focus-color;
-    border-color: $base-input-border-focus-color;
-    outline: 0;
+    outline: 1px solid $base-input-border-focus-color;
   }
 }
 
@@ -97,8 +95,7 @@ select {
   border: 1px solid $base-input-border-color;
   &:focus {
     background-color: $base-input-background-focus-color;
-    border-color: $base-input-border-focus-color;
-    outline: 0;
+    outline: 1px solid $base-input-border-focus-color;
   }
 }
 optgroup { font-weight: 700; }
