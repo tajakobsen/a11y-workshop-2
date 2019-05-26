@@ -19,7 +19,8 @@ function initBookingForm() {
 }
 
 /**
- * Pretends to send a booking via a fetch()
+ * Pretends to send a booking via a (fake) fetch()
+ *
  * @param {FormData} formData
  * @return {Promise}
  */
@@ -29,7 +30,7 @@ function pretendToSendBookingViaAjax(formData) {
   const email = formData.get('email');
   const date = formData.get('date-of-booking');
 
-  if (!name || name.length < 1) {
+  if (!name || name.length < 2) {
     errors['full-name'] = ["You must enter a name for the reservation"];
   }
   if (!email || !REGEX_EMAIL.test(email)) {
@@ -50,9 +51,14 @@ function pretendToSendBookingViaAjax(formData) {
       });
     }
   });
-
 }
 
+/**
+ * Shows the success message when submitting a booking
+ *
+ * @param {Object} success
+ * @param {String} success.message
+ */
 function showBookingSuccess(success) {
   const alert = document.getElementById("book-now-form-alert");
 
@@ -65,6 +71,7 @@ function showBookingSuccess(success) {
 
 /**
  * Displays errors in the booking form
+ *
  * @param {String[]} errors
  */
 function showBookingErrors(errors) {
@@ -82,6 +89,10 @@ function showBookingErrors(errors) {
     });
 }
 
+/**
+ * Removes the error styles from all the form inputs,
+ * and removes any error messages shown
+ */
 function removeBookingFormErrors() {
   ['full-name', 'email', 'date-of-booking']
     .forEach((fieldName) => {
@@ -90,14 +101,33 @@ function removeBookingFormErrors() {
     });
 }
 
+/**
+ * Returns an element by the name
+ *
+ * @param {String} fieldName
+ * @return {Element}
+ */
 function getElementByName(fieldName) {
   return document.querySelector(`[name="${fieldName}"]`);
 }
 
+
+/**
+ * Returns the error message element of a field, by field name
+ *
+ * @param {String} fieldName
+ * @return {HTMLElement}
+ */
 function getErrorMessageElementForByName(fieldName) {
-  return document.getElementById(`${fieldName}-message`);
+  const messageId = getElementByName(fieldName).dataset.errormessage;
+  return document.getElementById(messageId);
 }
 
+/**
+ * Removes the hidden class from an element
+ *
+ * @param {HTMLElement} element
+ */
 function show(element) {
   element.classList.remove('hidden');
 }
