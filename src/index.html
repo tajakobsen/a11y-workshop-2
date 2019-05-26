@@ -289,23 +289,29 @@
             If you've been to one of our restaurants, you've seen - and tasted - what keeps our customers coming back for more. Perfect materials and freshly baked food
           </p>
         </div>
-        <form class="reservations-form">
+
+        <div id="book-now-form-alert" class="alert hidden"></div>
+
+        <form id="book-now-form" class="reservations-form">
           <fieldset class="reservations-form-wrap">
             <legend class="sr">Contact Us</legend>
             <div class="clear">
               <div class="col-6-m pad-top-10 pad-bottom-10">
                 <label class="block strong" for="name">Name</label>
                 <input name="full-name" class="field" id="name" type="text" placeholder="your name *">
+                <span id="full-name-message" class="field-error-message"></span>
               </div>
               <div class="col-6-m pad-top-10 pad-bottom-10">
                 <label class="block strong" for="email">Email</label>
                 <input name="email" class="field" id="email" type="email" placeholder="your email *">
+                <span id="email-message" class="field-error-message"></span>
               </div>
             </div>
             <div class="clear">
               <div class="col-6-m pad-top-10 pad-bottom-10">
                 <label class="block strong" for="date">Date</label>
                 <input name="date-of-booking" class="field" id="date" type="text" placeholder="date *">
+                <span id="date-of-booking-message" class="field-error-message"></span>
               </div>
               <div class="col-6-m pad-top-10 pad-bottom-10">
                 <label class="block strong" for="party-size">Party size</label>
@@ -319,7 +325,7 @@
               </div>
             </div>
             <div class="text-center">
-              <input type="submit" class="button reservations-submit" value="Book now!">
+              <input id="book-now-button" type="submit" class="button reservations-submit" value="Book now!">
             </div>
           </fieldset>
         </form>
@@ -373,6 +379,7 @@
 <script src="js/vendor/wow.js"></script>
 <script src="js/vendor/webfontloader.js"></script>
 <script src="js/default.js"></script>
+<script src="js/booking.js"></script>
 <script src="js/workshop.js"></script>
 
 </body>

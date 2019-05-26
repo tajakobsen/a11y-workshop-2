@@ -9,6 +9,14 @@
       outline: 1px solid $gold;
     }
   }
+
+  .field-error {
+    border: 1px solid red;
+  }
+
+  .field-error-message {
+    color: red;
+  }
 }
 .reservations-submit {
   margin-top: 20px;
