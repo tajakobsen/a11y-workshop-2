@@ -1,7 +1,7 @@
 // Base Gulp File
 var gulp = require('gulp'),
     watch = require('gulp-watch'),
-    sass = require('gulp-sass'),
+    //sass = require('gulp-sass'),
     sourcemaps = require('gulp-sourcemaps'),
     cssBase64 = require('gulp-css-base64'),
     path = require('path'),
@@ -16,7 +16,7 @@ var gulp = require('gulp'),
     runSequence = require('run-sequence');
 
 // Task to compile SCSS
-gulp.task('sass', function () {
+/*gulp.task('sass', function () {
   return gulp.src('./src/scss/styles.scss')
     .pipe(sourcemaps.init())
     .pipe(sass({
@@ -35,7 +35,7 @@ gulp.task('sass', function () {
       stream: true
     }))
     .pipe(notify("SCSS Compiled Successfully :)"));
-});
+});*/
 
 // Task to Minify JS
 gulp.task('jsmin', function() {
@@ -75,7 +75,7 @@ gulp.task('inlinesource', function () {
 
 // Gulp Watch Task
 gulp.task('watch', ['browserSync'], function () {
-   gulp.watch('./src/scss/**/*', ['sass']);
+   // gulp.watch('./src/scss/**/*', ['sass']);
    gulp.watch('./src/**/*.html').on('change', browserSync.reload);
 });
 
@@ -89,5 +89,5 @@ gulp.task('default', ['watch']);
 
 // Gulp Build Task
 gulp.task('build', function() {
-  runSequence('clean', 'sass', 'imagemin', 'jsmin', 'inlinesource');
+  runSequence('clean', 'imagemin', 'jsmin', 'inlinesource');
 });
