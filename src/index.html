@@ -257,16 +257,32 @@
   <div class="reviews-block-inner container">
     <div class="feature-box text-center col-12-m col-8-l no-float center">
       <h2 class="heading-secondary">Guest Reviews</h2>
-      <blockquote class="pad-30">
-        <p>
+
+
+      <div id="guest-accordion" class="accordion">
+        <h3>
+          <button class="accordion-trigger" data-body="accordion-body-1" id="accordion-header-1">
+            food inc, New York
+          </button>
+        </h3>
+        <div id="accordion-body-1" class="accordion-panel">
           If you've been to one of our restaurants, you've seen - and tasted - what keeps our customers coming back for more.
           Perfect materials and freshly baked food, delicious Lambda cakes, muffins, and gourmet coffees makes us hard to resist!
           Stop in today and check us out!
-        </p>
-        <cite>
-          food inc, New York
-        </cite>
-      </blockquote>
+        </div>
+
+        <h3>
+          <button class="accordion-trigger" data-body="accordion-body-2" id="accordion-header-2">
+          Arne Banan
+          </button>
+        </h3>
+        <div id="accordion-body-2" class="accordion-panel hidden">
+          Visited as a guest in the Lambda restaurant for lunch just today.
+          I just want to say that, in addition to a nice meal, we had a delightful waitress, Hilda. She had just the
+          right balance of friendliness and efficiency.
+        </div>
+      </div>
+
     </div>
   </div>
 </div>
@@ -380,6 +396,7 @@
 <script src="js/vendor/webfontloader.js"></script>
 <script src="js/default.js"></script>
 <script src="js/booking.js"></script>
+<script src="js/accordion.js"></script>
 <script src="js/workshop.js"></script>
 
 </body>
